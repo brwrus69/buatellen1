@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Surat buat kamu, dibaca yahh</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #f0f0f0;
+        text-align: center;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(white 1px, transparent 1px);
+        background-size: 5px 5px;
+        animation: starsMove 60s linear infinite;
+        z-index: 0;
+        opacity: 0.2;
+        pointer-events: none;
+      }
+
+      @keyframes starsMove {
+        from {
+          background-position: 0 0;
+        }
+        to {
+          background-position: 1000px 1000px;
+        }
+      }
+
+      .container {
+        padding: 20px;
+        max-width: 800px;
+        margin: auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+      }
+
+      .music-player {
+        margin-top: 20px;
+      }
+
+      .gallery {
+        margin: 30px 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .gallery img {
+        width: 90%;
+        max-width: 250px;
+        margin: 10px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        animation: fadeUp 1.5s ease-out;
+      }
+
+      .gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+      }
+
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .quotes {
+        margin: 20px auto;
+        font-style: italic;
+        font-size: 1.1rem;
+        text-align: center;
+        max-width: 600px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .quote-box {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .after-spotify {
+        margin-top: 10px;
+        font-style: normal;
+        font-size: 1rem;
+        color: #f0f0f0;
+      }
+
+      #intro {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: #0f2027;
+        color: white;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        animation: fadeOut 2s forwards 2s;
+      }
+
+      button {
+        padding: 14px 30px;
+        font-size: 1.1rem;
+        background-color: #3c8dbc;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background 0.3s, transform 0.3s;
+      }
+
+      button:hover {
+        background-color: #2a6e96;
+        transform: scale(1.05);
+      }
+
+      #result {
+        margin: 30px auto;
+        max-width: 600px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 15px 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+        opacity: 0; 
+        animation: fadeInText 2s ease-in forwards;
+        animation-delay: 1s;
+      }
+
+      @keyframes fadeInText {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      /* Media Queries */
+      @media screen and (max-width: 768px) {
+        h1 {
+          font-size: 2.2rem;
+        }
+
+        p {
+          font-size: 1.1rem;
+        }
+
+        .gallery img {
+          max-width: 95%;
+        }
+
+        .quotes {
+          font-size: 1rem;
+          padding: 0 10px;
+        }
+
+        .after-spotify {
+          font-size: 0.95rem;
+        }
+
+        iframe {
+          width: 100% !important;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        .quotes {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="intro">Pertama kali dibuatin website sama cowo yaa?? hehe</div>
+
+    <div id="result" class="container">
+      <h1>Halo, Ellenn</h1>
+      <p>
+        Aku ada surat nih buat kamuu, dibaca yaa. Gabakal hilang nih, bisa kamu
+        buka dimanapun dan kapanpunn
+      </p>
+    </div>
+
+    <div class="music-player">
+      <button onclick="toggleMusic()" id="musicBtn"> Dengerin Musiknyaa</button>
+      <audio id="bgMusic" loop>
+        <source src="SpotiDownloader.com - The Night We Met - Lord Huron.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+
+
+    <div class="gallery">
+      <img src="BRW_0057.jpg" alt= />
+    </div>
+
+    <div class="quotes">
+      <div class="quote-box">
+        <p>
+          “Kita beda keyakinan, tapi aku yakin satu hal. Kamu emang diturunin
+          Tuhan buat bikin aku senyum tiap hari.”<br />
+          <br>
+          “Kamu sujud ke timur, aku berlutut di gereja… tapi kita berdua jatuh
+          cinta di tempat yang sama yaitu hati masing-masing.”<br />
+          <br>
+          “Meskipun kamu nyepi dan aku misa, hatiku tetep ribut mikirin kamu.”
+        </p>
+      </div>
+      
+      <div class="responsive-iframe">
+        <iframe        
+        style="border-radius: 12px; margin-top: 20px"
+        src="https://open.spotify.com/embed/playlist/6lFAJHanOArK52H0KILr2u?utm_source=generator"
+        width="100%"
+        height="400"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"></iframe>
+      </div>
+
+      <div class="after-spotify">Jangan lupa didengerin yaaa 🎶</div>
+    </div>
+    <div class="gallery">
+      <img src="SURAT BUAT ELLEN.png" alt= />
+    </div>
+
+    <div id="result">
+      Jangan lupa didengerin sama dimakan yaa bingkisannya, byee 💙
+    </div>
+
+    <script>
+      const music = document.getElementById("bgMusic");
+      const musicBtn = document.getElementById("musicBtn");
+
+      music.volume = 0.3;
+
+      function toggleMusic() {
+        if (music.paused) {
+          music.play();
+          musicBtn.innerText = "Pause Music";
+        } else {
+          music.pause();
+          musicBtn.innerText = "Play Music";
+        }
+      }
+    </script>
+  </body>
+</html>
